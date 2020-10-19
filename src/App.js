@@ -16,8 +16,6 @@ import {
   TextContainer,
 } from '@shopify/polaris';
 import {ImportMinor} from '@shopify/polaris-icons';
-import enTranslations from '@shopify/polaris/locales/en.json';
-import './App.css';
 
 export default function App() {
 
@@ -54,13 +52,26 @@ export default function App() {
         </Layout.Section>
       
         <Layout.Section oneHalf>
-          <Button className="pl-2 pr-2">Create review</Button>
-          <Button className="pl-2 pr-2">Import excel</Button>
-          <Button className="pl-2 pr-2">Export excel</Button>
+            <Layout.Section oneThird>
+            <Card>
+              <Button>Create review</Button>
+              </Card>
+            </Layout.Section>
+            
+            <Layout.Section oneThird>
+            <Card>
+              <Button>Create review</Button>
+              </Card>
+            </Layout.Section>
+            
+            <Layout.Section oneThird>
+            <Card>
+              <Button>Create review</Button>
+              </Card>
+            </Layout.Section>
         </Layout.Section>
         <Layout.Section oneHalf>
-          <Button success>
-          <i className="md-icon md-icon-font md-theme-default"></i>
+          <Button>
           Sync products From Shopify
           </Button>
         </Layout.Section>
