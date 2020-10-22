@@ -1,4 +1,4 @@
-import React from "react";
+import axios from 'axios';
 
 export const columns = [
   {
@@ -16,36 +16,26 @@ export const columns = [
     selector: "action",
   }
 ];
+ 
+// Make a request for a user with a given ID
+// axios.get('https://thanglocal.omegatheme.com/new-app/BE/test.php?testapi')
+//   .then(function (response) {
+//     // handle success
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .then(function () {
+//     // always executed
+//   });
 
-export const data = [
+export const datas = [
   {
     id: 1,
     product: "Beetlejuice 1",
     rating: "1",
-    action:""
-  },
-  {
-    id: 2,
-    product: "Beetlejuice 2",
-    rating: "2",
-    action:""
-  },
-  {
-    id: 3,
-    product: "Beetlejuice 3",
-    rating: "3",
-    action:""
-  },
-  {
-    id: 4,
-    product: "Beetlejuice 4",
-    rating: "4",
-    action:""
-  },
-  {
-    id: 5,
-    product: "Beetlejuice 5",
-    rating: "5",
     action:""
   },
 ];

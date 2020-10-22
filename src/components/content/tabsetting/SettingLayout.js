@@ -1,6 +1,7 @@
 import React, {useCallback, useState} from 'react';
-import {Layout, Stack, RadioButton, Select, Heading, TextField} from '@shopify/polaris';
+import {Layout, Stack, RadioButton, Select, Heading, TextField, Button} from '@shopify/polaris';
 import InputColor from 'react-input-color';
+import ReactStars from "react-rating-stars-component";
 
 function SelectLayout() {
     const [selected, setSelected] = useState('overstock');
@@ -35,7 +36,7 @@ function RadioButtonExample() {
         return (
             <>
                 <img src={Props.img} />
-                <span style={{position:'relative',bottom:'6px',fontSize:'16px',marginLeft:'5px'}}>{Props.label}</span>
+                <span style={{position:'relative',bottom:'0px',fontSize:'16px',marginLeft:'5px'}}>{Props.label}</span>
             </>
         );
     }
@@ -93,13 +94,30 @@ function ColorchangeHandler(colors) {
 }
 
 function ChooseColor(){
-    const [color, setColor] = React.useState({});
+    const [colorButtonBackground, setColorButtonBackground] = React.useState({});
+    const [colorButtontext, setColorButtontext] = React.useState({});
+    const [colorReview, setColorReview] = React.useState({});
 
     return (
         <div>
+            <Heading>Button background color</Heading>
             <InputColor
                 initialValue="#5e72e4"
-                onChange={setColor}
+                onChange={setColorButtonBackground}
+                placement="right"
+            />
+
+            <Heading>Button text color</Heading>
+            <InputColor
+                initialValue="#5e72e4"
+                onChange={setColorButtontext}
+                placement="right"
+            />
+
+            <Heading>Review statistic bar color</Heading>
+            <InputColor
+                initialValue="#5e72e4"
+                onChange={setColorReview}
                 placement="right"
             />
         </div>
@@ -123,12 +141,71 @@ const SettingLayout = () => {
                         <div style={{marginTop:"15px"}}>
                             <ChooseColor />
                         </div>
+                        <div style={{marginTop:"15px"}}>
+                            <Button primary>Save</Button>
+                        </div>
                     </div>
                 </Layout.Section>
 
                 <Layout.Section oneHalf>
-                    <div style={{border:"1px solid #ECECEC",padding:"10px"}}>
+                    <div style={{border:"1px solid #ECECEC",padding:"10px",backgroundColor:"rgb(245, 245, 245)"}}>
+                        <p style={{fontWeight:"bold"}}>Attention! This is a preview only. The visuals might differ after applying settings due to extra styling rules that your Theme might have or the available space.</p>
+                    </div>
+                    
+                    <div style={{border:"1px solid #ECECEC",padding:"10px",marginTop:"20px"}}>
+                        <Layout>
+                            <Layout.Section>
+                            <p style={{fontSize:"18px"}}>CUSTOMER REVIEWS</p>
+                            </Layout.Section>
 
+                            <Layout.Section secondary>
+                            <div style={{textAlign: 'right'}}>
+                            <Button primary>Write a review</Button>
+                            </div>
+                            </Layout.Section>
+                        </Layout>
+                        <Layout>
+                            <Layout.Section>
+                                <div style={{marginTop:"15px",borderBottom:"1px solid #ccc",paddingBottom:"15px"}}>
+                                    <ReactStars
+                                        count={5}
+                                        size={24}
+                                        emptyIcon={<i className="far fa-star"></i>}
+                                        fullIcon={<i className="fa fa-star"></i>}
+                                        activeColor="#ffd700"
+                                        value={3}
+                                        edit={false}
+                                    />
+                                    <p>Lorem Ipsum Dolor Sit Amet By Lorem Ipsum <span style={{color:"#22b345"}}>| Verified Purchase</span></p>
+                                    <p>
+                                        <img src="https://apps.omegatheme.com/customer-reviews/assets/images/recommend.png"></img>
+                                        <span style={{color:"#22b345"}}> I recommend this!</span>
+                                        <p>- 1 day ago -</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit fringilla turpis at tempor. Maecenas ipsum nisi, semper nec urna et, tristique placerat ex. Vestibulum ultricies mauris elit, non maximus erat vehicula et.</p>
+                                        <p>20 customers thought this review helpful!</p>
+                                    </p>
+                                </div>
+                                <div style={{marginTop:"15px"}}>
+                                    <ReactStars
+                                        count={5}
+                                        size={24}
+                                        emptyIcon={<i className="far fa-star"></i>}
+                                        fullIcon={<i className="fa fa-star"></i>}
+                                        activeColor="#ffd700"
+                                        value={3}
+                                        edit={false}
+                                    />
+                                    <p>Lorem Ipsum Dolor Sit Amet By Lorem Ipsum <span style={{color:"#c45500"}}>| Verified Purchase</span></p>
+                                    <p>
+                                        <img src="https://apps.omegatheme.com/customer-reviews/assets/images/no-recommend.png"></img>
+                                        <span style={{color:"#22b345"}}> I recommend this!</span>
+                                        <p>- 1 day ago -</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit fringilla turpis at tempor. Maecenas ipsum nisi, semper nec urna et, tristique placerat ex. Vestibulum ultricies mauris elit, non maximus erat vehicula et.</p>
+                                        <p>10 customers thought this review helpful!</p>
+                                    </p>
+                                </div>
+                            </Layout.Section>
+                        </Layout>
                     </div>
                 </Layout.Section>
             </Layout>

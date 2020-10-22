@@ -3,18 +3,11 @@ import {Button, ButtonGroup} from '@shopify/polaris';
 
 function EditButton(){
     const path = window.location.pathname;
-    if(path == '/'){
+    if(path == '/settings'){
         return(
             <ButtonGroup>
-                <Button url='/settings'>Settings</Button>
-                <Button url='/instructions'>Instructions</Button>
-            </ButtonGroup>
-        );
-    }else if(path == '/settings'){
-        return(
-            <ButtonGroup>
-                <Button url='/'>List Reviews</Button>
-                <Button url='/instructions'>Instructions</Button>
+                <Button url="/">List Reviews</Button>
+                <Button url="/instructions">Instructions</Button>
             </ButtonGroup>
         );
     }else if(path == '/instructions'){
@@ -22,6 +15,13 @@ function EditButton(){
             <ButtonGroup>
                 <Button url='/'>List Reviews</Button>
                 <Button url='/settings'>Settings</Button>
+            </ButtonGroup>
+        );
+    }else{
+        return(
+            <ButtonGroup>
+                <Button url='/settings'>Settings</Button>
+                <Button url='/instructions'>Instructions</Button>
             </ButtonGroup>
         );
     }

@@ -5,7 +5,7 @@ import SettingGeneral from './tabsetting/SettingGeneral';
 
 const Settings = () => {
 
-    const [selected, setSelected] = useState(1);
+    const [selected, setSelected] = useState(0);
 
     const handleTabChange = useCallback(
         (selectedTabIndex) => setSelected(selectedTabIndex),

@@ -1,0 +1,59 @@
+.clUl {
+  padding-left: 0;
+  list-style: none;
+}
+
+.clLi {
+  cursor: pointer;
+  height: 30px;
+  padding: 10px 10px 28px 10px;
+}
+
+.clLi:hover {
+  background: rgb(246, 246, 247);
+}
+
+.imgStar {
+  width: 25px;
+  margin: 0 5px;
+  position: relative;
+  bottom: 3px;
+}
+
+.textStar {
+  font-size: 18px;
+  position: relative;
+  bottom: 3px;
+}
+
+.textStarRight {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #787878;
+}
+
+.imgProduct {
+  width: 190px;
+  display: inline-block;
+}
+
+.productInfo {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.clBadge {
+  display: inline;
+  margin-right: 5px;
+}
+
+.clIcon {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.clIcon:hover {
+  background: #ccc;
+}

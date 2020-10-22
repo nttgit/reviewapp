@@ -116,9 +116,46 @@ const SettingGeneral = () => {
     const handleChangeUploadImageButton = useCallback((newValue) => setValueUploadImageButton(newValue), []);
     // 
 
+    // Show "Verified Purchase" text
+    const [valueVerifiedPurchase, setValueVerifiedPurchase] = useState('yesVerifiedPurchase');
+    const handleChangeVerifiedPurchase = useCallback(
+        (_checked, newValue) => setValueVerifiedPurchase(newValue),
+        [],
+    );
+    // 
 
+    // Show Recommend Customer text
+    const [valueRecommendCustomerText, setValueRecommendCustomerText] = useState('yesRecommendCustomerText');
+    const handleChangeRecommendCustomerText = useCallback(
+        (_checked, newValue) => setValueRecommendCustomerText(newValue),
+        [],
+    );
+    // 
+
+    // Asking customer for a review
+    const [valueAskingCustomter, setValueAskingCustomter] = useState('noAskingCustomter');
+    const handleChangeAskingCustomter = useCallback(
+        (_checked, newValue) => setValueAskingCustomter(newValue),
+        [],
+    );
+    // 
+
+    // Featured reviews box badge
+    const [valueFeaturedReviews, setValueFeaturedReviews] = useState('noFeaturedReviews');
+    const handleChangeFeaturedReviews = useCallback(
+        (_checked, newValue) => setValueFeaturedReviews(newValue),
+        [],
+    );
+    // 
+
+    // Custom Css
+    const [valueCustomCss, setValueCustomCss] = useState('');
+    const handleChangeCustomCss = useCallback((newValue) => setValueCustomCss(newValue), []);
+    // 
+    
     return (
         <Page>
+            {/* button */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section>
@@ -128,7 +165,9 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
+            {/*  */}
 
+            {/* Auto publish */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section secondary>
@@ -159,7 +198,9 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
+            {/*  */}
 
+            {/* Insert shortcode */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section secondary>
@@ -186,11 +227,13 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
+            {/*  */}
 
+            {/* Only show featured reviews */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section secondary>
-                    <Heading>Auto publish</Heading>
+                    <Heading>Only show featured reviews</Heading>
                 </Layout.Section>
 
                 <Layout.Section>
@@ -215,7 +258,9 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
+            {/*  */}
 
+            {/* Email Settings */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section secondary>
@@ -258,7 +303,9 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
+            {/*  */}
 
+            {/* Reviews per page */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section secondary>
@@ -275,7 +322,9 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
-
+            {/*  */}
+            
+            {/* Maximum characters in reviews */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section secondary>
@@ -292,7 +341,9 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
+            {/*  */}
 
+            {/* Maximum images can be uploaded in reviews */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section secondary>
@@ -309,7 +360,9 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
+            {/*  */}
 
+            {/* Review listing text */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section secondary>
@@ -338,7 +391,9 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
+            {/*  */}
 
+            {/* Review form text */}
             <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
             <Layout>
                 <Layout.Section secondary>
@@ -412,6 +467,164 @@ const SettingGeneral = () => {
                 </Layout.Section>
             </Layout>
             </div>
+            {/*  */}
+
+            {/* Show "Verified Purchase" text */}
+            <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
+            <Layout>
+                <Layout.Section secondary>
+                    <Heading>Show "Verified Purchase" text</Heading>
+                </Layout.Section>
+
+                <Layout.Section>
+                    <Card sectioned>
+                    <Stack vertical>
+                        <RadioButton
+                            label="Yes"
+                            checked={valueVerifiedPurchase === 'yesVerifiedPurchase'}
+                            id="yesVerifiedPurchase"
+                            name="yesVerifiedPurchase"
+                            onChange={handleChangeVerifiedPurchase}
+                        />
+                        <RadioButton
+                            label="No"
+                            id="noVerifiedPurchase"
+                            name="noVerifiedPurchase"
+                            checked={valueVerifiedPurchase === 'noVerifiedPurchase'}
+                            onChange={handleChangeVerifiedPurchase}
+                        />
+                        </Stack>
+                    </Card>
+                </Layout.Section>
+            </Layout>
+            </div>
+            {/*  */}
+
+            {/* Show Recommend Customer text */}
+            <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
+            <Layout>
+                <Layout.Section secondary>
+                    <Heading>Show Recommend Customer text</Heading>
+                </Layout.Section>
+
+                <Layout.Section>
+                    <Card sectioned>
+                    <Stack vertical>
+                        <RadioButton
+                            label="Yes"
+                            checked={valueRecommendCustomerText === 'yesRecommendCustomerText'}
+                            id="yesRecommendCustomerText"
+                            name="yesRecommendCustomerText"
+                            onChange={handleChangeRecommendCustomerText}
+                        />
+                        <RadioButton
+                            label="No"
+                            id="noRecommendCustomerText"
+                            name="noRecommendCustomerText"
+                            checked={valueRecommendCustomerText === 'noRecommendCustomerText'}
+                            onChange={handleChangeRecommendCustomerText}
+                        />
+                        </Stack>
+                    </Card>
+                </Layout.Section>
+            </Layout>
+            </div>
+            {/*  */}
+
+            {/* Asking customer for a review */}
+            <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
+            <Layout>
+                <Layout.Section secondary>
+                    <Heading>Asking customer for a review</Heading>
+                    <p style={{marginTop:"3px",color:"#666",fontStyle:"italic"}}>When your customers login, they will see notification to ask them for a review with bought products.</p>
+                </Layout.Section>
+
+                <Layout.Section>
+                    <Card sectioned>
+                        <p>Show notification to paid customers to asking for a review</p>
+                        <Stack>
+                            <RadioButton
+                                label="Yes"
+                                checked={valueAskingCustomter === 'yesAskingCustomter'}
+                                id="yesAskingCustomter"
+                                name="yesAskingCustomter"
+                                onChange={handleChangeAskingCustomter}
+                            />
+                            <RadioButton
+                                label="No"
+                                id="noAskingCustomter"
+                                name="noAskingCustomter"
+                                checked={valueAskingCustomter === 'noAskingCustomter'}
+                                onChange={handleChangeAskingCustomter}
+                            />
+                        </Stack>
+                    </Card>
+                </Layout.Section>
+            </Layout>
+            </div>
+            {/*  */}
+
+            {/* Featured reviews box badge */}
+            <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
+            <Layout>
+                <Layout.Section secondary>
+                    <Heading>Featured reviews box badge</Heading>
+                    <p style={{marginTop:"3px",color:"#666",fontStyle:"italic"}}>Will appear featured reviews box badge on all your store pages.</p>
+                </Layout.Section>
+
+                <Layout.Section>
+                    <Card sectioned>
+                        <p>Show box badge</p>
+                        <Stack>
+                            <RadioButton
+                                label="Yes"
+                                checked={valueFeaturedReviews === 'yesFeaturedReviews'}
+                                id="yesFeaturedReviews"
+                                name="yesFeaturedReviews"
+                                onChange={handleChangeFeaturedReviews}
+                            />
+                            <RadioButton
+                                label="No"
+                                id="noFeaturedReviews"
+                                name="noFeaturedReviews"
+                                checked={valueFeaturedReviews === 'noFeaturedReviews'}
+                                onChange={handleChangeFeaturedReviews}
+                            />
+                        </Stack>
+                    </Card>
+                </Layout.Section>
+            </Layout>
+            </div>
+            {/*  */}
+
+            {/* Custom CSS */}
+            <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
+            <Layout>
+                <Layout.Section secondary>
+                    <Heading>Custom CSS</Heading>
+                </Layout.Section>
+
+                <Layout.Section>
+                    <Card sectioned>
+                        <TextField label="" value={valueCustomCss} onChange={handleChangeCustomCss} multiline={4} />
+                    </Card>
+                </Layout.Section>
+            </Layout>
+            </div>
+            {/*  */}
+
+            {/* button */}
+            <div style={{borderBottom:"1px solid #ECECEC",paddingBottom:"15px",marginBottom:"15px"}}>
+            <Layout>
+                <Layout.Section>
+                    <div>
+                        <Button primary>Save</Button>
+                    </div>
+                </Layout.Section>
+            </Layout>
+            </div>
+            {/*  */}
+
         </Page>
     );
 }
